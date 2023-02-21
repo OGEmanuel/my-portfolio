@@ -14,6 +14,8 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      spinnerOne: 'spinnerOne 1.2s linear infinite',
+      spinnerTwo: 'spinnerTwo 1.2s linear infinite',
     },
     aria: {
       checked: 'checked="true"',
@@ -557,6 +559,34 @@ module.exports = {
         '50%': {
           transform: 'none',
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
+        },
+      },
+      spinnerOne: {
+        '0%': {
+          transform: 'rotate(0deg)',
+          borderWidth: '10px',
+        },
+        '50%': {
+          transform: 'rotate(180deg)',
+          borderWidth: '1px',
+        },
+        '100%': {
+          transform: 'rotate(360deg)',
+          borderWidth: '10px',
+        },
+      },
+      spinnerTwo: {
+        '0%': {
+          transform: 'rotate(0deg)',
+          borderWidth: '1px',
+        },
+        '50%': {
+          transform: 'rotate(180deg)',
+          borderWidth: '10px',
+        },
+        '100%': {
+          transform: 'rotate(360deg)',
+          borderWidth: '1px',
         },
       },
     },
