@@ -1,7 +1,12 @@
-import Portfolio from '../components/Portfolio';
+import React from 'react';
+const Portfolio = React.lazy(() => import('../components/Portfolio'));
 
 const PortfolioPage = () => {
-  return <Portfolio />;
+  return (
+    <React.Suspense fallback={<>...</>}>
+      <Portfolio />
+    </React.Suspense>
+  );
 };
 
 export default PortfolioPage;

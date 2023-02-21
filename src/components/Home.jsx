@@ -8,11 +8,11 @@ const Home = () => {
         <h1 className="md:text-2xl text-lg font-bold mb-2 md:mb-4">
           About Me!
         </h1>
-        <h2 className="xl:text-lg mb-2">
+        <h2 className="xl:text-lg mb-4 md:mb-2">
           I am <span className="font-semibold">Ogunmola Emmanuel</span>, A
           Frontend Developer;
         </h2>
-        <p className="xl:text-lg mb-2 leading-loose xl:w-[35rem]">
+        <p className="xl:text-lg mb-4 md:mb-2 leading-loose xl:w-[35rem]">
           <Link
             to="https://devcareer.io/"
             className="transition p-2 rounded-[5px] bg-white text-red-500"
