@@ -23,10 +23,10 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="bg-yellow-500 text-white p-7">
-      <div className="flex gap-5 mb-5">
-        <h1 className="text-4xl font-bold">Technologies:</h1>
-        <div className="flex gap-5">
+    <div className="bg-yellow-500 text-white flex flex-col-reverse gap-4 md:grid grid-cols-2 p-7">
+      <div className="gap-5 mb-4">
+        <h1 className="text-4xl font-bold text-center mb-4">Technologies</h1>
+        <div className="grid grid-cols-2 gap-5 justify-center">
           <div className="flex flex-col items-center">
             <img src={html} alt="" />
             <figcaption>HTML</figcaption>
@@ -47,8 +47,8 @@ const Portfolio = () => {
             <img src={javascript} alt="" />
             <figcaption>Javascript</figcaption>
           </div>
-          <div className="flex flex-col justify-between">
-            <img src={react} alt="" />
+          <div className="flex flex-col items-center justify-between">
+            <img src={react} alt="" className="self-center" />
             <figcaption>React</figcaption>
           </div>
           <div className="flex flex-col items-center">
@@ -57,8 +57,8 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="flex">
-        <h2 className="text-4xl font-bold">Projects:</h2>
+      <div className="">
+        <h2 className="text-4xl font-bold text-center mb-4">Project</h2>
         <div className="bg-gray-100 text-black w-[15rem] px-6 py-3 mx-auto rounded-[5px] shadow-md">
           <div
             onMouseOver={handleMouseOver}

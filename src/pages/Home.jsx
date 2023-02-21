@@ -1,7 +1,13 @@
-import Home from '../components/Home';
+import React from 'react';
+const Home = React.lazy(() => import('../components/Home'));
 
 const HomePage = () => {
-  return <Home />;
+  return (
+    <React.Suspense fallback={<>...</>}>
+      {' '}
+      <Home />{' '}
+    </React.Suspense>
+  );
 };
 
 export default HomePage;

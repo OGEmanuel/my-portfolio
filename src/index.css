@@ -7,3 +7,21 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+@layer utilities {
+  .stack {
+    grid-template-areas: 'stack';
+  }
+
+  .stack-none {
+    grid-template-areas: none;
+  }
+
+  .area {
+    grid-area: stack;
+  }
+
+  .area-none {
+    grid-area: auto / auto / auto / auto;
+  }
+}
