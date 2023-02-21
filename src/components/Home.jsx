@@ -4,7 +4,7 @@ import illustration from '../assets/home-illustration.jpg';
 const Home = () => {
   return (
     <div className="grid md:grid-cols-2 bg-red-500 stack md:stack-none text-gray-100 md:text-white">
-      <div className="md:p-7 py-4 px-6 self-center area z-10 md:z-auto md:area-none">
+      <div className="md:p-7 py-10 px-6 self-center area z-10 md:z-auto md:area-none">
         <h1 className="md:text-2xl text-lg font-bold mb-2 md:mb-4">
           About Me!
         </h1>
