@@ -26,7 +26,7 @@ const Portfolio = () => {
     <div className="bg-yellow-500 text-white flex flex-col-reverse gap-4 md:grid grid-cols-2 p-7">
       <div className="gap-5 mb-4">
         <h1 className="text-4xl font-bold text-center mb-4">Technologies</h1>
-        <div className="grid grid-cols-2 gap-5 justify-center">
+        <div className="grid grid-cols-3 gap-5 justify-center">
           <div className="flex flex-col items-center">
             <img src={html} alt="" />
             <figcaption>HTML</figcaption>
