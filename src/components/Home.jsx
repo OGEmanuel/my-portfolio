@@ -34,7 +34,7 @@ const Home = () => {
       <img
         src={illustration}
         alt="illustration"
-        className="h-full md:w-auto area brightness-50 md:brightness-100 md:area-none"
+        className="h-full md:w-auto area brightness-50 object-cover object-right-bottom md:brightness-100 md:area-none"
       />
     </div>
   );
