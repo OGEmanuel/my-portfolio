@@ -4,7 +4,7 @@ import gitlab from '../assets/icons8-gitlab.svg';
 import twitter from '../assets/icons8-twitter.svg';
 import github from '../assets/icons8-github.svg';
 import { Link } from 'react-router-dom';
-import resume from '../assets/file/Ogunmola-Emmanuel-I.-Frontend-developer-Resume.pdf';
+import resume from '../assets/file/Ogunmola-Emmanuel-Frontend-Developer-CV.pdf';
 
 const Contact = () => {
   return (
