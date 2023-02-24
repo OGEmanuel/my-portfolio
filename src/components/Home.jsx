@@ -1,11 +1,24 @@
 import { Link } from 'react-router-dom';
 import illustration from '../assets/home-illustration.jpg';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
-    <div className="grid md:grid-cols-2 bg-red-500 stack md:stack-none text-gray-100 md:text-white">
-      <div className="md:p-7 py-10 px-6 self-center area z-10 md:z-auto md:area-none">
-        <h1 className="text-2xl font-bold mb-2 md:mb-4">About Me!</h1>
+    <div className="grid md:grid-cols-2 md:bg-red-500 stack md:stack-none text-gray-100 md:text-white">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
+        className="md:p-7 py-10 px-6 self-center area z-10 md:z-auto md:area-none"
+      >
+        <motion.h1
+          className="font-bold mb-2 md:mb-4"
+          initial={{ fontSize: '1rem' }}
+          animate={{ fontSize: '2rem' }}
+          transition={{ delay: 1 }}
+        >
+          About Me!
+        </motion.h1>
         <h2 className="text-lg mb-4 md:mb-2">
           I am <span className="font-semibold">Ogunmola Emmanuel</span>, A
           Frontend Developer;
@@ -30,8 +43,11 @@ const Home = () => {
           leaving no stone unturned. Responsiveness to different screen sizes,
           optimized webpages and accessible websites is my pride.
         </p>
-      </div>
-      <img
+      </motion.div>
+      <motion.img
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+        transition={{ type: 'tween' }}
         src={illustration}
         alt="illustration"
         className="h-full md:w-auto area brightness-50 object-cover object-right-bottom md:brightness-100 md:area-none"

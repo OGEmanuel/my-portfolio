@@ -10,6 +10,7 @@ import github from '../assets/icons8-github.svg';
 import link from '../assets/icons8-link-24.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -57,20 +58,27 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="">
+      <div>
         <h2 className="text-4xl font-bold text-center mb-4">Project</h2>
-        <div className="bg-gray-100 text-black w-[15rem] px-6 py-3 mx-auto rounded-[5px] shadow-md">
+        <motion.div
+          initial={{ y: '-100vh' }}
+          animate={{ y: 0 }}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          transition={{ type: 'spring', stiffness: 55 }}
+          className="bg-gray-100 text-black w-[15rem] px-6 py-3 mx-auto rounded-[5px] shadow-md"
+        >
           <div
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
             className={`${
               isHovering ? 'brightness-50' : ''
             } w-[12rem] mx-auto my-2 overflow-hidden relative rounded-[5px] transition`}
           >
-            <img
+            <motion.img
               src={assess}
               alt=""
-              className="w-full hover:scale-105 transition"
+              className="w-full transition"
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: 'tween' }}
             />
             <Link to="https://github.com/OGEmanuel/team-assessment-frontend">
               <img
@@ -100,7 +108,7 @@ const Portfolio = () => {
             <img src={css} alt="css" />
             <img src={git} alt="git" />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

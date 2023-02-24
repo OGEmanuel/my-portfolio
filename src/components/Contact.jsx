@@ -5,6 +5,7 @@ import twitter from '../assets/icons8-twitter.svg';
 import github from '../assets/icons8-github.svg';
 import { Link } from 'react-router-dom';
 import resume from '../assets/file/Ogunmola-Emmanuel-Frontend-Developer-CV.pdf';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
@@ -48,9 +49,17 @@ const Contact = () => {
         </Link>
       </div>
       <a href={resume} download="Resume" className="flex mb-6">
-        <button className="mx-auto p-5 bg-white text-green-500 font-semibold rounded-[5px] text-lg">
+        <motion.button
+          initial={{ x: '-100vw' }}
+          animate={{ x: 0 }}
+          transition={{ type: 'spring', stiffness: 120 }}
+          whileHover={{
+            boxShadow: '0px 0px 8px rgb(255,255,255)',
+          }}
+          className="mx-auto p-5 bg-white text-green-500 font-semibold rounded-[5px] text-lg"
+        >
           Download My CV
-        </button>
+        </motion.button>
       </a>
     </div>
   );

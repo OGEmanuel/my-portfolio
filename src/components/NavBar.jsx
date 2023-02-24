@@ -1,10 +1,22 @@
 import { NavLink } from 'react-router-dom';
 import traffic from '../assets/traffic-signal.svg';
+import { motion } from 'framer-motion';
 
 const NavBar = () => {
   return (
     <nav className="flex w-full xl:py-7 py-4 gap-4 md:gap-10 justify-center">
-      <img src={traffic} alt="" className="w-[3rem] md:w-[5rem]" />
+      <motion.img
+        initial={{ x: -250 }}
+        animate={{ x: 0 }}
+        transition={{
+          delay: 0.2,
+          type: 'spring',
+          stiffness: 75,
+        }}
+        src={traffic}
+        alt=""
+        className="w-[3rem] md:w-[5rem]"
+      />
       <NavLink
         to=""
         className={({ isActive }) =>
