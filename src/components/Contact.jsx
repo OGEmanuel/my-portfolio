@@ -7,6 +7,22 @@ import { Link } from 'react-router-dom';
 import resume from '../assets/file/Ogunmola-Emmanuel-Frontend-Developer-CV.pdf';
 import { motion } from 'framer-motion';
 
+const buttonVariants = {
+  hidden: {
+    opacity: 0,
+    x: '-100vw',
+  },
+
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 120,
+    },
+  },
+};
+
 const Contact = () => {
   return (
     <div className="bg-green-500 text-white p-10">
@@ -16,43 +32,68 @@ const Contact = () => {
           to="mailto:emanuolumide@gmail.com"
           className="flex flex-col justify-center"
         >
-          <img src={gmail} alt="" className="self-center" />
+          <motion.img
+            whileHover={{ scale: 1.3 }}
+            src={gmail}
+            alt=""
+            className="self-center"
+          />
           <figcaption>Gmail</figcaption>
         </Link>
         <Link
           to="https://www.linkedin.com/in/emmanuel-ogunmola-a5007a1a6/"
           className="flex flex-col justify-center"
         >
-          <img src={linkedIn} alt="" className="self-center" />
+          <motion.img
+            whileHover={{ scale: 1.3 }}
+            src={linkedIn}
+            alt=""
+            className="self-center"
+          />
           <figcaption>LinkedIn</figcaption>
         </Link>
         <Link
           to="https://twitter.com/its_GODwithMe"
           className="flex flex-col justify-center"
         >
-          <img src={twitter} alt="" className="self-center" />
+          <motion.img
+            whileHover={{ scale: 1.3 }}
+            src={twitter}
+            alt=""
+            className="self-center"
+          />
           <figcaption>Twitter</figcaption>
         </Link>
         <Link
           to="https://github.com/OGEmanuel"
           className="flex flex-col justify-center"
         >
-          <img src={github} alt="" className="w-[3rem] self-center" />
+          <motion.img
+            whileHover={{ scale: 1.3 }}
+            src={github}
+            alt=""
+            className="w-[3rem] self-center"
+          />
           <figcaption>Github</figcaption>
         </Link>
         <Link
           t0="https://gitlab.com/6lack5anta"
           className="flex flex-col justify-center"
         >
-          <img src={gitlab} alt="" className="self-center" />
+          <motion.img
+            whileHover={{ scale: 1.3 }}
+            src={gitlab}
+            alt=""
+            className="self-center"
+          />
           <figcaption>Gitlab</figcaption>
         </Link>
       </div>
-      <a href={resume} download="Resume" className="flex mb-6">
+      <a href={resume} download="Resume" className="flex mb-6 w-fit mx-auto">
         <motion.button
-          initial={{ x: '-100vw' }}
-          animate={{ x: 0 }}
-          transition={{ type: 'spring', stiffness: 120 }}
+          variants={buttonVariants}
+          initial="hidden"
+          animate="visible"
           whileHover={{
             boxShadow: '0px 0px 8px rgb(255,255,255)',
           }}
