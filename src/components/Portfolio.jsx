@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Footer from './Footer';
+import React from '../assets/animatedSVG/React';
 
 const imgVariants = {
   hover: {
@@ -118,12 +119,11 @@ const Portfolio = () => {
               />
             </Link>
           </div>
-          <p className="text-justify pb-2 text-sm font-semibold">
-            I developed this site during my internship at DevCareer. It's the
-            proposed assessment platform for future interns.
+          <p className="text-center pb-2 font-semibold">
+            Desktop Assessment Project
           </p>
-          <div className="flex justify-center gap-4">
-            <img src={react} alt="" />
+          <div className="flex items-center justify-center gap-4">
+            <React />
             <img src={css} alt="css" />
             <img src={git} alt="git" />
           </div>

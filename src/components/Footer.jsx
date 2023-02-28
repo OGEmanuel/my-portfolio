@@ -10,10 +10,14 @@ const Footer = () => {
         Illustrations from{' '}
         <Link className="underline" to="https://www.freepik.com/">
           Freepik
-        </Link>{' '}
-        and icons from{' '}
+        </Link>
+        , icons from{' '}
         <Link className="underline" to="https://iconscout.com/">
           Iconscout
+        </Link>{' '}
+        and{' '}
+        <Link className="underline" to="https://icons8.com/">
+          Icons8
         </Link>
       </p>
     </footer>
