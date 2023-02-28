@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const NavBar = () => {
   return (
-    <nav className="flex w-full xl:py-7 py-4 gap-4 md:gap-10 justify-center">
+    <nav className="flex w-full gap-4 md:gap-10 justify-center">
       <motion.img
         initial={{ x: -250 }}
         animate={{ x: 0 }}
@@ -20,7 +20,7 @@ const NavBar = () => {
       <NavLink
         to=""
         className={({ isActive }) =>
-          `md:text-lg font-semibold md:p-5 p-2 transition ${
+          `md:text-lg font-semibold md:px-5 md:py-3 px-3 py-1 transition ${
             isActive ? 'bg-red-500 text-white' : 'text-red-500'
           } rounded-[10px] self-center  hover:bg-red-500 hover:text-white`
         }
@@ -30,7 +30,7 @@ const NavBar = () => {
       <NavLink
         to="portfolio"
         className={({ isActive }) =>
-          `md:text-lg font-semibold md:p-5 p-2 transition ${
+          `md:text-lg font-semibold md:px-5 md:py-3 px-2 py-1 transition ${
             isActive ? 'bg-yellow-500 text-white' : 'text-yellow-500'
           } rounded-[10px] self-center  hover:bg-yellow-500 hover:text-white`
         }
@@ -40,7 +40,7 @@ const NavBar = () => {
       <NavLink
         to="contact"
         className={({ isActive }) =>
-          `md:text-lg font-semibold md:p-5 p-2 transition ${
+          `md:text-lg font-semibold md:px-5 md:py-3 px-2 py-1 transition ${
             isActive ? 'bg-green-500 text-white' : 'text-green-500'
           } rounded-[10px] self-center hover:bg-green-500 hover:text-white`
         }

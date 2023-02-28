@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import illustration from '../assets/home-illustration.jpg';
 import { motion } from 'framer-motion';
+import Footer from './Footer';
 
 const containerVariants = {
   hidden: {
@@ -11,27 +12,42 @@ const containerVariants = {
     transition: {
       delay: 0.5,
       duration: 1,
+      when: 'beforeChildren',
+      staggerChildren: 0.5,
     },
   },
 };
 
 const h1Variant = {
   hidden: {
-    opacity: 0,
+    opacity: 1,
     fontSize: '1rem',
   },
   visible: {
     opacity: 1,
     fontSize: '2rem',
+  },
+};
+
+const childVariants = {
+  hidden: {
+    opacity: 0,
+    y: '-100vh',
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: {
-      delay: 1,
+      type: 'spring',
+      mass: 0.4,
+      damping: 8,
     },
   },
 };
 
 const Home = () => {
   return (
-    <div className="grid md:grid-cols-2 md:bg-red-500 stack md:stack-none text-gray-100 md:text-white">
+    <div className="grid md:grid-cols-2 md:bg-red-500 stack md:stack-none text-gray-100 md:text-white md:overflow-y-scroll xl:overflow-auto">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -60,11 +76,14 @@ const Home = () => {
           privileged to work for, with my technical skills; while also
           exhibiting my soft skills in my interactions with my colleagues.
         </p>
-        <p className="text-lg xl:w-[35rem]">
+        <p className="text-lg xl:w-[35rem] mb-12">
           I convert designs neatly and beutifully, paying attention to details,
           leaving no stone unturned. Responsiveness to different screen sizes,
           optimized webpages and accessible websites is my pride.
         </p>
+        <motion.div variants={childVariants}>
+          <Footer />
+        </motion.div>
       </motion.div>
       <motion.img
         initial={{ x: '-100vw' }}

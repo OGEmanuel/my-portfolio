@@ -6,6 +6,7 @@ import github from '../assets/icons8-github.svg';
 import { Link } from 'react-router-dom';
 import resume from '../assets/file/Ogunmola-Emmanuel-Frontend-Developer-CV.pdf';
 import { motion } from 'framer-motion';
+import Footer from './Footer';
 
 const buttonVariants = {
   hidden: {
@@ -21,11 +22,14 @@ const buttonVariants = {
       stiffness: 120,
     },
   },
+  hover: {
+    boxShadow: '0px 0px 8px rgb(255,255,255)',
+  },
 };
 
 const Contact = () => {
   return (
-    <div className="bg-green-500 text-white p-10">
+    <div className="bg-green-500 text-white p-10 md:px-10 md:py-[5.7rem] overflow-auto xl:overflow-hidden">
       <h1 className="text-center text-4xl font-bold mb-6">Contact me!</h1>
       <div className="flex gap-10 justify-center flex-wrap mb-10">
         <Link
@@ -89,19 +93,18 @@ const Contact = () => {
           <figcaption>Gitlab</figcaption>
         </Link>
       </div>
-      <a href={resume} download="Resume" className="flex mb-6 w-fit mx-auto">
+      <a href={resume} download="Resume" className="flex mb-24 w-fit mx-auto">
         <motion.button
           variants={buttonVariants}
           initial="hidden"
           animate="visible"
-          whileHover={{
-            boxShadow: '0px 0px 8px rgb(255,255,255)',
-          }}
+          whileHover="hover"
           className="mx-auto p-5 bg-white text-green-500 font-semibold rounded-[5px] text-lg"
         >
           Download My CV
         </motion.button>
       </a>
+      <Footer />
     </div>
   );
 };

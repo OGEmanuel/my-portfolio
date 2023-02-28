@@ -11,6 +11,19 @@ import link from '../assets/icons8-link-24.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Footer from './Footer';
+
+const imgVariants = {
+  hover: {
+    // scale: [1, 1.5, 1, 1.3, 1, 1.1, 1],
+    scale: 1.3,
+    transition: {
+      duration: 0.3,
+      repeat: Infinity,
+      repeatType: 'reverse',
+    },
+  },
+};
 
 const Portfolio = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -24,12 +37,17 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="bg-yellow-500 text-white flex flex-col-reverse gap-4 md:grid grid-cols-2 p-7">
+    <div className="bg-yellow-500 text-white md:py-14 flex flex-col-reverse gap-4 md:grid grid-cols-2 p-7 overflow-auto md:overflow-y-scroll xl:overflow-hidden">
       <div className="gap-5 mb-4">
         <h1 className="text-4xl font-bold text-center mb-4">Technologies</h1>
-        <div className="grid grid-cols-3 gap-5 justify-center">
+        <div className="grid grid-cols-3 gap-5 justify-center mb-20">
           <div className="flex flex-col items-center">
-            <img src={html} alt="" />
+            <motion.img
+              variants={imgVariants}
+              whileHover="hover"
+              src={html}
+              alt=""
+            />
             <figcaption>HTML</figcaption>
           </div>
           <div className="flex flex-col items-center">
@@ -57,6 +75,7 @@ const Portfolio = () => {
             <figcaption>Git</figcaption>
           </div>
         </div>
+        <Footer />
       </div>
       <div>
         <h2 className="text-4xl font-bold text-center mb-4">Project</h2>
