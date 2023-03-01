@@ -104,7 +104,7 @@ const Portfolio = () => {
         <Footer />
       </div>
       <div>
-        <h2 className="text-4xl font-bold text-center mb-4">Project</h2>
+        <h2 className="text-4xl font-bold text-center mb-4">Projects</h2>
         <div className="flex flex-wrap xl:gap-0 gap-4">
           {PROJECTS.map(project => (
             <motion.div
