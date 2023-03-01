@@ -4,7 +4,7 @@ const svgVariants = {
   hidden: { rotate: 360 },
   visible: {
     rotate: 0,
-    transition: { repeat: Infinity, duration: 2, repeatType: 'mirror' },
+    transition: { repeat: Infinity, duration: 2, ease: 'linear' },
   },
 };
 
