@@ -17,12 +17,7 @@ import portfolio from '../assets/portfolio.png';
 
 const imgVariants = {
   hover: {
-    scale: 1.3,
-    transition: {
-      duration: 0.3,
-      repeat: Infinity,
-      repeatType: 'reverse',
-    },
+    scale: [1, 1.5, 1, 1.3, 1, 1.2, 1],
   },
 };
 
