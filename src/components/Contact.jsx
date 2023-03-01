@@ -93,7 +93,11 @@ const Contact = () => {
           <figcaption>Gitlab</figcaption>
         </Link>
       </div>
-      <a href={resume} download="Resume" className="flex mb-24 w-fit mx-auto">
+      <a
+        href={resume}
+        download="Resume of Ogunmola Emmanuel - Frontend Developer"
+        className="flex mb-24 w-fit mx-auto"
+      >
         <motion.button
           variants={buttonVariants}
           initial="hidden"
