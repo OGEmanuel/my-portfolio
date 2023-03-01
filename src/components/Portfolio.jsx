@@ -3,7 +3,6 @@ import css from '../assets/icons8-css3-48.png';
 import tailwind from '../assets/icons8-tailwindcss-48.png';
 import sass from '../assets/icons8-sass-48.png';
 import javascript from '../assets/icons8-javascript-48.png';
-import react from '../assets/react.svg';
 import git from '../assets/icons8-git-48.png';
 import assess from '../assets/devassess.png';
 import github from '../assets/icons8-github.svg';
@@ -13,11 +12,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Footer from './Footer';
 import React from '../assets/animatedSVG/React';
-import Tailwind from '../assets/animatedSVG/Tailwind';
+import framer from '../assets/framer.svg';
+import portfolio from '../assets/portfolio.png';
 
 const imgVariants = {
   hover: {
-    // scale: [1, 1.5, 1, 1.3, 1, 1.1, 1],
     scale: 1.3,
     transition: {
       duration: 0.3,
@@ -28,119 +27,157 @@ const imgVariants = {
 };
 
 const Portfolio = () => {
-  const [isHovering, setIsHovering] = useState(false);
+  const [active, setActive] = useState(null);
 
-  const handleMouseOver = () => {
-    setIsHovering(true);
+  const handleHover = id => {
+    setActive(id);
   };
 
   const handleMouseOut = () => {
-    setIsHovering(false);
+    setActive(null);
   };
+
+  const SKILLS = [
+    { id: 1, icon: html, framework: 'HTML' },
+    { id: 2, icon: css, framework: 'CSS' },
+    { id: 3, icon: sass, framework: 'SASS' },
+    { id: 4, icon: tailwind, framework: 'Tailwind CSS' },
+    { id: 5, icon: javascript, framework: 'Javascript' },
+    { id: 6, icon: <React />, framework: 'React' },
+    { id: 7, icon: git, framework: 'Git' },
+    { id: 8, icon: framer, framework: 'Framer Motion' },
+  ];
+
+  const PROJECTS = [
+    {
+      id: 1,
+      preview: assess,
+      title: 'Desktop Assessment Project',
+      code: 'https://github.com/OGEmanuel/team-assessment-frontend',
+      live: 'https://devcareer-assessment.netlify.app/',
+      tech: [
+        { id: 1.1, icon: <React />, framework: 'React' },
+        { id: 1.2, icon: css, framework: 'CSS' },
+        { id: 1.3, icon: git, framework: 'Git' },
+      ],
+    },
+    {
+      id: 2,
+      preview: portfolio,
+      title: 'My Portfolio Website',
+      code: 'https://github.com/OGEmanuel/my-portfolio',
+      live: 'https://emanueldev.netlify.app/',
+      tech: [
+        { id: 2.1, icon: <React />, framework: 'React' },
+        { id: 2.2, icon: tailwind, framework: 'Tailwind' },
+        { id: 2.3, icon: framer, framework: 'Framer Motion' },
+        { id: 2.4, icon: git, framework: 'Git' },
+      ],
+    },
+  ];
 
   return (
     <div className="bg-yellow-500 text-white md:py-14 flex flex-col-reverse gap-4 md:grid grid-cols-2 p-7 overflow-auto md:overflow-y-scroll xl:overflow-hidden">
       <div className="gap-5 mb-4">
         <h1 className="text-4xl font-bold text-center mb-4">Technologies</h1>
         <div className="grid grid-cols-3 gap-5 justify-center mb-20">
-          <div className="flex flex-col items-center">
-            <motion.img
-              variants={imgVariants}
-              whileHover="hover"
-              src={html}
-              alt=""
-            />
-            <figcaption>HTML</figcaption>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={css} alt="" />
-            <figcaption>CSS</figcaption>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={sass} alt="" />
-            <figcaption>SASS</figcaption>
-          </div>
-          <div className="flex flex-col items-center">
-            {/* <img src={tailwind} alt="" /> */}
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 48 48"
-              width="48px"
-              height="48px"
+          {SKILLS.map(skill => (
+            <div
+              className={`flex flex-col items-center ${
+                skill.framework === 'React' ||
+                skill.framework === 'Git' ||
+                skill.framework === 'Framer Motion'
+                  ? 'md:justify-between gap-4'
+                  : ''
+              }`}
+              key={skill.id}
             >
-              <path
-                fill="#00acc1"
-                d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"
-              />
-            </svg> */}
-            <Tailwind />
-            <figcaption>Tailwind</figcaption>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={javascript} alt="" />
-            <figcaption>Javascript</figcaption>
-          </div>
-          <div className="flex flex-col items-center justify-between">
-            <img src={react} alt="" className="self-center" />
-            <figcaption>React</figcaption>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={git} alt="" />
-            <figcaption>Git</figcaption>
-          </div>
+              {skill.framework === 'React' ? (
+                skill.icon
+              ) : (
+                <motion.img
+                  variants={imgVariants}
+                  whileHover="hover"
+                  src={skill.icon}
+                  alt=""
+                />
+              )}
+              <figcaption className="text-center">{skill.framework}</figcaption>
+            </div>
+          ))}
         </div>
         <Footer />
       </div>
       <div>
         <h2 className="text-4xl font-bold text-center mb-4">Project</h2>
-        <motion.div
-          initial={{ y: '-100vh' }}
-          animate={{ y: 0 }}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-          transition={{ type: 'spring', stiffness: 55 }}
-          className="bg-gray-100 text-black w-[15rem] px-6 py-3 mx-auto rounded-[5px] shadow-md"
-        >
-          <div
-            className={`${
-              isHovering ? 'brightness-50' : ''
-            } w-[12rem] mx-auto my-2 overflow-hidden relative rounded-[5px] transition`}
-          >
-            <motion.img
-              src={assess}
-              alt=""
-              className="w-full transition"
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: 'tween' }}
-            />
-            <Link to="https://github.com/OGEmanuel/team-assessment-frontend">
-              <img
-                src={github}
-                alt=""
+        <div className="flex flex-wrap xl:gap-0 gap-4">
+          {PROJECTS.map(project => (
+            <motion.div
+              initial={{ y: '-100vh' }}
+              animate={{ y: 0 }}
+              onMouseOver={() => handleHover(project.id)}
+              onMouseOut={handleMouseOut}
+              transition={{ type: 'spring', stiffness: 55 }}
+              className="bg-gray-100 text-black w-[15rem] px-6 py-3 mx-auto rounded-[5px] shadow-md"
+              key={project.id}
+            >
+              <div
                 className={`${
-                  isHovering ? 'absolute' : 'hidden'
-                } self-center top-[37%] right-[70%]`}
-              />
-            </Link>
-            <Link to="https://devcareer-assessment.netlify.app/">
-              <img
-                src={link}
-                alt=""
-                className={`${
-                  isHovering ? 'absolute' : 'hidden'
-                } self-center top-[40%] right-[20%]`}
-              />
-            </Link>
-          </div>
-          <p className="text-center pb-2 font-semibold">
-            Desktop Assessment Project
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <React />
-            <img src={css} alt="css" />
-            <img src={git} alt="git" />
-          </div>
-        </motion.div>
+                  active === project.id ? 'brightness-50' : ''
+                } w-[12rem] mx-auto my-2 overflow-hidden relative rounded-[5px] transition`}
+              >
+                <motion.img
+                  src={project.preview}
+                  alt=""
+                  className="w-full transition"
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: 'tween' }}
+                />
+                <Link to={project.code}>
+                  <motion.img
+                    src={github}
+                    alt=""
+                    variants={imgVariants}
+                    whileHover="hover"
+                    className={`${
+                      active === project.id ? 'absolute' : 'hidden'
+                    } self-center top-[37%] right-[70%]`}
+                  />
+                </Link>
+                <Link to={project.live}>
+                  <motion.img
+                    src={link}
+                    variants={imgVariants}
+                    whileHover="hover"
+                    alt=""
+                    className={`${
+                      active === project.id ? 'absolute' : 'hidden'
+                    } self-center top-[40%] right-[20%]`}
+                  />
+                </Link>
+              </div>
+              <p className="text-center pb-2 font-semibold text-lg">
+                {project.title}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {project.tech.map(tech => (
+                  <div key={tech.id}>
+                    {tech.framework === 'React' ? (
+                      tech.icon
+                    ) : (
+                      <motion.img
+                        variants={imgVariants}
+                        whileHover="hover"
+                        src={tech.icon}
+                        alt=""
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

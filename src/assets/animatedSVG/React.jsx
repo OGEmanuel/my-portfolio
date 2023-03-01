@@ -15,7 +15,7 @@ const React = () => {
       xmlns:xlink="http://www.w3.org/1999/xlink"
       aria-hidden="true"
       role="img"
-      class="iconify iconify--logos"
+      className="iconify iconify--logos"
       width="35.93"
       height="32"
       preserveAspectRatio="xMidYMid meet"
