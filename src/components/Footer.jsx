@@ -8,15 +8,19 @@ const Footer = () => {
       </p>
       <p className="text-center">
         Illustrations from{' '}
-        <Link className="underline" to="https://www.freepik.com/">
+        <Link
+          className="underline"
+          to="https://www.freepik.com/"
+          target="_blank"
+        >
           Freepik
         </Link>
         , icons from{' '}
-        <Link className="underline" to="https://iconscout.com/">
+        <Link className="underline" to="https://iconscout.com/" target="_blank">
           Iconscout
         </Link>{' '}
         and{' '}
-        <Link className="underline" to="https://icons8.com/">
+        <Link className="underline" to="https://icons8.com/" target="_blank">
           Icons8
         </Link>
       </p>

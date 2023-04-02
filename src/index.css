@@ -24,4 +24,13 @@ body {
   .area-none {
     grid-area: auto / auto / auto / auto;
   }
+
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

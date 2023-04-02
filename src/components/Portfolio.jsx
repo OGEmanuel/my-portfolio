@@ -14,6 +14,9 @@ import Footer from './Footer';
 import React from '../assets/animatedSVG/React';
 import framer from '../assets/framer.svg';
 import portfolio from '../assets/portfolio.png';
+import interview from '../assets/Interview-task.png';
+import next from '../assets/next.svg';
+import practice from '../assets/practice-project.png';
 
 const imgVariants = {
   hover: {
@@ -41,6 +44,7 @@ const Portfolio = () => {
     { id: 6, icon: <React />, framework: 'React' },
     { id: 7, icon: git, framework: 'Git' },
     { id: 8, icon: framer, framework: 'Framer Motion' },
+    { id: 9, icon: next, framework: 'NextJs' },
   ];
 
   const PROJECTS = [
@@ -69,16 +73,43 @@ const Portfolio = () => {
         { id: 2.4, icon: git, framework: 'Git' },
       ],
     },
+    {
+      id: 3,
+      preview: interview,
+      title: 'Assigned Task at an Interview',
+      code: 'https://github.com/OGEmanuel/zeeh-interview-project',
+      live: 'https://zeeh-interview-project-by-emmanuel.vercel.app/',
+      tech: [
+        { id: 2.1, icon: next, framework: 'NextJs' },
+        { id: 2.2, icon: tailwind, framework: 'Tailwind' },
+        { id: 2.3, icon: framer, framework: 'Framer Motion' },
+        { id: 2.4, icon: git, framework: 'Git' },
+      ],
+    },
+    {
+      id: 4,
+      preview: practice,
+      title: 'A NextJs Practice Project',
+      code: 'https://github.com/OGEmanuel/personarise-landing-page',
+      live: 'https://personarise-project.netlify.app/',
+      tech: [
+        { id: 2.1, icon: next, framework: 'NextJs' },
+        { id: 2.2, icon: tailwind, framework: 'Tailwind' },
+        { id: 2.4, icon: git, framework: 'Git' },
+      ],
+    },
   ];
 
   return (
-    <div className="bg-yellow-500 text-white md:py-14 flex flex-col-reverse gap-4 md:grid grid-cols-2 p-7 overflow-auto md:overflow-y-scroll xl:overflow-hidden">
+    <div className="bg-yellow-500 text-white md:py-14 flex flex-col-reverse gap-4 md:grid grid-cols-[50%,_1fr] p-7 overflow-auto md:overflow-y-scroll xl:overflow-hidden">
       <div className="gap-5 mb-4">
         <h1 className="text-4xl font-bold text-center mb-4">Technologies</h1>
         <div className="grid grid-cols-3 gap-5 justify-center mb-20">
           {SKILLS.map(skill => (
             <div
               className={`flex flex-col items-center ${
+                skill.framework === 'NextJs' ? 'md:justify-end gap-4' : ''
+              } ${
                 skill.framework === 'React' ||
                 skill.framework === 'Git' ||
                 skill.framework === 'Framer Motion'
@@ -94,6 +125,9 @@ const Portfolio = () => {
                   variants={imgVariants}
                   whileHover="hover"
                   src={skill.icon}
+                  className={`${
+                    skill.framework === 'NextJs' ? 'w-[5rem]' : ''
+                  }`}
                   alt=""
                 />
               )}
@@ -103,9 +137,10 @@ const Portfolio = () => {
         </div>
         <Footer />
       </div>
-      <div>
+      <div className="md:overflow-scroll md:w-full scroll">
         <h2 className="text-4xl font-bold text-center mb-4">Projects</h2>
-        <div className="flex flex-wrap xl:gap-0 gap-4">
+
+        <div className="flex flex-wrap md:flex-nowrap gap-4">
           {PROJECTS.map(project => (
             <motion.div
               initial={{ y: '-100vh' }}
@@ -128,7 +163,7 @@ const Portfolio = () => {
                   whileHover={{ scale: 1.2 }}
                   transition={{ type: 'tween' }}
                 />
-                <Link to={project.code}>
+                <Link to={project.code} target="_blank">
                   <motion.img
                     src={github}
                     alt=""
@@ -139,7 +174,7 @@ const Portfolio = () => {
                     } self-center top-[37%] right-[70%]`}
                   />
                 </Link>
-                <Link to={project.live}>
+                <Link to={project.live} target="_blank">
                   <motion.img
                     src={link}
                     variants={imgVariants}
@@ -165,6 +200,7 @@ const Portfolio = () => {
                         whileHover="hover"
                         src={tech.icon}
                         alt=""
+                        className="w-12"
                       />
                     )}
                   </div>
