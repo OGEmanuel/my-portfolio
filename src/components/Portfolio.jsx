@@ -160,9 +160,7 @@ const Portfolio = () => {
 
         <div className="flex flex-wrap md:flex-nowrap gap-4">
           {PROJECTS.map(project => (
-            <motion.div
-              initial={{ y: '-100vh' }}
-              animate={{ y: 0 }}
+            <div
               onMouseOver={() => handleHover(project.id)}
               onMouseOut={handleMouseOut}
               transition={{ type: 'spring', stiffness: 55 }}
@@ -224,7 +222,7 @@ const Portfolio = () => {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
