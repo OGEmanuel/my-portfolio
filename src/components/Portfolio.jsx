@@ -7,7 +7,7 @@ import git from '../assets/icons8-git-48.png';
 import assess from '../assets/devassess.png';
 import github from '../assets/icons8-github.svg';
 import link from '../assets/icons8-link-24.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Footer from './Footer';
@@ -26,6 +26,10 @@ const imgVariants = {
 };
 
 const Portfolio = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   const [active, setActive] = useState(null);
 
   const handleHover = id => {
