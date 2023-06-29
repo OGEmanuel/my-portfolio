@@ -82,7 +82,7 @@ const Home = () => {
         transition={{ type: 'tween' }}
         src={illustration}
         alt="illustration"
-        className="min-h-screen md:w-auto area brightness-50 object-cover object-right-bottom md:brightness-100 md:area-none"
+        className="h-full md:min-h-screen md:w-auto area brightness-50 object-cover object-right-bottom md:brightness-100 md:area-none"
       />
     </div>
   );
