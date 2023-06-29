@@ -30,7 +30,7 @@ const h1Variant = {
 
 const Home = () => {
   return (
-    <div className="grid md:grid-cols-2 md:bg-red-500 stack md:stack-none text-gray-100 md:text-white md:overflow-y-scroll xl:overflow-auto">
+    <div className="grid md:grid-cols-2 min-h-screen md:bg-red-500 stack md:stack-none text-gray-100 md:text-white md:overflow-y-scroll xl:overflow-auto">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -56,18 +56,14 @@ const Home = () => {
         </p>
         <p className="text-lg xl:w-[35rem]">
           with expertise in JavaScript, React, and Next.js. I also have a good
-          understanding of TailwindCSS, Redux, Framer Motion, and Git. With over
-          1 year of experience in the industry, I specialize in creating
-          responsive web applications that provide a seamless user experience,
-          that align with basic UI/UX principles. I'm passionate about building
-          beautiful, performant web applications that engage users and drive
-          business results.
+          understanding of TailwindCSS, Redux, Framer Motion, and Git and over 1
+          year of experience in the industry. I specialise in creating
+          responsive web applications that proide a seamless user experience,
+          that align with basic UI/UX principles.
         </p>
         <p className="text-lg xl:w-[35rem] mb-12">
-          When I'm not working on web development projects, I experiment with
-          new tools and frameworks, and keep myself up-to-date with the latest
-          industry trends. Reach out to me for scalable, and performant web
-          applications with the latest technologies{' '}
+          Reach out to me for scalable, and performant web applications with the
+          latest technologies{' '}
           <Link
             to="/contact"
             className="font-bold text-lg transition py-1 px-2 rounded-[5px] bg-white text-red-500"
@@ -82,7 +78,7 @@ const Home = () => {
         transition={{ type: 'tween' }}
         src={illustration}
         alt="illustration"
-        className="h-full md:min-h-screen md:w-auto area brightness-50 object-cover object-right-bottom md:brightness-100 md:area-none"
+        className="min-h-screen md:w-auto area brightness-50 object-cover object-right-bottom md:brightness-100 md:area-none"
       />
     </div>
   );
