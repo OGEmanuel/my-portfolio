@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import illustration from '../assets/home-illustration.jpg';
 import { motion } from 'framer-motion';
-import Footer from './Footer';
 
 const containerVariants = {
   hidden: {
@@ -29,22 +28,6 @@ const h1Variant = {
   },
 };
 
-const childVariants = {
-  hidden: {
-    opacity: 0,
-    y: '-100vh',
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: 'spring',
-      mass: 0.4,
-      damping: 8,
-    },
-  },
-};
-
 const Home = () => {
   return (
     <div className="grid md:grid-cols-2 md:bg-red-500 stack md:stack-none text-gray-100 md:text-white md:overflow-y-scroll xl:overflow-auto">
@@ -61,6 +44,7 @@ const Home = () => {
           I am <span className="font-semibold">Ogunmola Emmanuel</span>, A
           Frontend Developer;
         </h2>
+
         <p className="text-lg mb-4 md:mb-2 leading-loose xl:w-[35rem]">
           <Link
             to="https://devcareer.io/"
@@ -68,22 +52,29 @@ const Home = () => {
           >
             DevCareer
           </Link>{' '}
-          Alumnus and Junior Frontend Developer at Aurbase.
+          Alumnus and Junior Frontend Developer at Capriquota.
         </p>
         <p className="text-lg xl:w-[35rem]">
-          Proficient in HTML, CSS (SASS & TailwindCSS), JavaScript, React and
-          Version Control. Looking to add value to any oragnisation i'm
-          privileged to work for, with my technical skills; while also
-          exhibiting my soft skills in my interactions with my colleagues.
+          with expertise in JavaScript, React, and Next.js. I also have a good
+          understanding of TailwindCSS, Redux, Framer Motion, and Git. With over
+          1 year of experience in the industry, I specialize in creating
+          responsive web applications that provide a seamless user experience,
+          that align with basic UI/UX principles. I'm passionate about building
+          beautiful, performant web applications that engage users and drive
+          business results.
         </p>
         <p className="text-lg xl:w-[35rem] mb-12">
-          I convert designs neatly and beutifully, paying attention to details,
-          leaving no stone unturned. Responsiveness to different screen sizes,
-          optimized webpages and accessible websites is my pride.
+          When I'm not working on web development projects, I experiment with
+          new tools and frameworks, and keep myself up-to-date with the latest
+          industry trends. Reach out to me for scalable, and performant web
+          applications with the latest technologies{' '}
+          <Link
+            to="/contact"
+            className="font-bold text-lg transition py-1 px-2 rounded-[5px] bg-white text-red-500"
+          >
+            here.
+          </Link>
         </p>
-        <motion.div variants={childVariants}>
-          <Footer />
-        </motion.div>
       </motion.div>
       <motion.img
         initial={{ x: '-100vw' }}

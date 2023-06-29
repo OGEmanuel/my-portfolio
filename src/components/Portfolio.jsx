@@ -17,6 +17,7 @@ import portfolio from '../assets/portfolio.png';
 import interview from '../assets/Interview-task.png';
 import next from '../assets/next.svg';
 import practice from '../assets/practice-project.png';
+import awaskill from '../assets/Awaskill.png';
 
 const imgVariants = {
   hover: {
@@ -50,6 +51,19 @@ const Portfolio = () => {
   const PROJECTS = [
     {
       id: 1,
+      preview: awaskill,
+      title: 'Awaskill',
+      code: 'https://github.com/kingjamesx/quiz-app',
+      live: 'https://awaskill.vercel.app/',
+      tech: [
+        { id: 1.1, icon: next, framework: 'NextJs' },
+        { id: 1.2, icon: tailwind, framework: 'Tailwind CSS' },
+        { id: 1.3, icon: framer, framework: 'Framer Motion' },
+        { id: 1.4, icon: git, framework: 'Git' },
+      ],
+    },
+    {
+      id: 2,
       preview: assess,
       title: 'Desktop Assessment Project',
       code: 'https://github.com/OGEmanuel/team-assessment-frontend',
@@ -61,7 +75,7 @@ const Portfolio = () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       preview: portfolio,
       title: 'My Portfolio Website',
       code: 'https://github.com/OGEmanuel/my-portfolio',
@@ -74,7 +88,7 @@ const Portfolio = () => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       preview: interview,
       title: 'Assigned Task at an Interview',
       code: 'https://github.com/OGEmanuel/zeeh-interview-project',
@@ -87,7 +101,7 @@ const Portfolio = () => {
       ],
     },
     {
-      id: 4,
+      id: 5,
       preview: practice,
       title: 'A NextJs Practice Project',
       code: 'https://github.com/OGEmanuel/personarise-landing-page',
