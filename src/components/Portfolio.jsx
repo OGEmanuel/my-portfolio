@@ -82,7 +82,7 @@ const Portfolio = () => {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 {project.tech.map(tech => (
-                  <div key={tech.id}>
+                  <div key={tech.id} className="w-max">
                     <motion.img
                       variants={imgVariants}
                       whileHover="hover"

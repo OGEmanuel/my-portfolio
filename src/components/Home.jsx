@@ -44,32 +44,15 @@ const Home = () => {
           I am <span className="font-semibold">Ogunmola Emmanuel</span>, A
           Frontend Developer;
         </h2>
-
-        <p className="text-lg mb-4 md:mb-2 leading-loose xl:w-[35rem]">
-          <Link
-            to="https://devcareer.io/"
-            className="transition p-2 rounded-[5px] bg-white text-red-500"
-          >
-            DevCareer
-          </Link>{' '}
-          Alumnus and Junior Frontend Developer at Capriquota.
-        </p>
         <p className="text-lg xl:w-[35rem]">
-          with expertise in JavaScript, React, and Next.js. I also have a good
-          understanding of TailwindCSS, Redux, Framer Motion, and Git and over 1
-          year of experience in the industry. I specialise in creating
-          responsive web applications that proide a seamless user experience,
-          that align with basic UI/UX principles.
-        </p>
-        <p className="text-lg xl:w-[35rem] mb-12">
-          Reach out to me for scalable, and performant web applications with the
-          latest technologies{' '}
-          <Link
-            to="/contact"
-            className="font-bold text-lg transition py-1 px-2 rounded-[5px] bg-white text-red-500"
-          >
-            here.
-          </Link>
+          With a strong background in frontend development, I have consistently
+          demonstrated my proficiency in building intuitive user interfaces and
+          delivering high-quality web applications. My hands-on experience with
+          React and NextJS has allowed me to tackle complex challenges and drive
+          impactful results. My track record of successfully collaborating with
+          cross-functional teams and my commitment to continuous improvement
+          make me a valuable asset to any organization seeking to elevate its
+          frontend development capabilities.
         </p>
       </motion.div>
       <motion.img
